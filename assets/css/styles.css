@@ -1,0 +1,24 @@
+html {
+    min-height: 100%
+}
+
+body {
+    background-color: gainsboro;
+}
+
+button.topic-btn{
+    background-color: darkcyan;
+    border: none;
+    border-radius: 5px;
+
+    margin: 7.5px;
+    padding: 10px 20px;
+
+    font-size: 18pt;
+    color: white;
+
+}
+
+button.topic-btn:hover{
+    background-color: goldenrod;
+}
