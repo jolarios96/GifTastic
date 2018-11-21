@@ -11,9 +11,7 @@ for (var i = 0; i < topics.length; i++){
 
 // Goal: inside element of '#btn-wrapper, on click btn of class='topic-btn', get button's id
 $('#btn-wrapper').on('click', '.topic-btn', function(){
-    console.log('You clicked');
-    console.log(this);
-    console.log($(this).data('topic'));
+    console.log("Requesting GIFS of topic: " + $(this).data('topic'));
 
     getGifs($(this).data('topic'));
 })
