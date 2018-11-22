@@ -46,13 +46,13 @@ div #content-wrapper{
     border: 0;
     border-radius: 5px;
 
-    margin-right: 5px;
+    margin-left: 5px;
     padding: 10px;
 
     font-size: 16pt;
     color: white;
 
-    float: right;
+    float: 'left';
 }
 
 #add-tag:hover {
