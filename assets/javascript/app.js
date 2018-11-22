@@ -86,10 +86,12 @@ function getGifs(topic) {
             var results = response.data;
 
             for (var i = 0; i < results.length; i++) {
+                // text stuff
                 var rating = results[i].rating;
                 var p = $('<p>').text('Rating: ' + rating);
                 p.addClass('rating');
 
+                // img stuff
                 var newImg = $('<img>');
                 newImg.attr({
                     'src': results[i].images.fixed_height_still.url,
@@ -99,12 +101,13 @@ function getGifs(topic) {
                 });
                 newImg.addClass('gif-preview')
 
-
+                // div stuff
                 var newDiv = $('<div>');
                 newDiv.addClass('gif-container');
                 newDiv.append(p);
                 newDiv.append(newImg);
 
+                // append!
                 $('#gifs').append(newDiv);
 
                 console.log('Gif-' + i + ' Get!');
