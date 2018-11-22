@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: gainsboro;
+    background-color: gray;
     min-height: 100%;
 }
 
@@ -60,20 +60,9 @@ div #content-wrapper{
 }
 /*  */
 
-/* GIF-CONTAINER STYLES */
-#gifs {    
-    display: table;
-}
-
-div .gif-container{
-    display: block;
-    margin : 10px;
-    float: left;
-}
-
 /* BUTTON STYLES */
 #buttons-container {
-    background-color:rgb(55, 55, 110);
+    background-color:rgb(54, 57, 146);
 }
 
 button {
@@ -91,3 +80,25 @@ button {
 button:hover {
     background-color: orange;
 }
+/*  */
+
+/* GIF-CONTAINER STYLES */
+#gifs {    
+    display: table;
+}
+
+div .gif-container{
+    display: block;
+    margin : 10px;
+    float: left;
+
+    border: 2px white solid;
+    background-color: white;
+}
+
+.rating{
+    font-size: 24px;
+    padding-bottom:5px;
+
+}
+

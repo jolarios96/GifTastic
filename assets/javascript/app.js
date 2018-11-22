@@ -59,6 +59,7 @@ function getGifs(topic) {
             for (var i = 0; i < results.length; i++) {
                 var rating = results[i].rating;
                 var p = $('<p>').text('Rating: ' + rating);
+                p.addClass('rating');
 
                 var newImg = $('<img>');
                 newImg.attr('src', results[i].images.fixed_height_still.url);
