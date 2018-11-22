@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <!-- <Title>GifTastic</Title> -->
+    <Title>GifTastic</Title>
     <meta charset='UTF-8'>
     <link rel='stylesheet' type='text/css' href='assets/css/reset.css'>
     <link rel='stylesheet' type='text/css' href='assets/css/styles.css'>
@@ -11,10 +11,27 @@
 
 <body>
 
-    <div id='wrapper'>
-        <div id='btn-wrapper'></div>
-        <div id='gif-wrapper'></div>
+    <div>
+
+        <div id='content-wrapper'>
+            <div id='buttons-container'></div>
+
+            <div id='form-wrapper'>
+
+                <h1 id='form-header'>Add a Tag!</h1>
+                <form id='tag-form'>
+                    <input type="text" id="tag-input">
+                    <input id="submit-tag" type="submit" value="Submit">
+                </form>
+            </div>
+            <div id='gifs'></div>
+
+        </div>
+
+
+
     </div>
+
 
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

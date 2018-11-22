@@ -5,21 +5,21 @@ for (var i = 0; i < topics.length; i++) {
     newElement.attr('data-topic', topics[i]);
     newElement.addClass('topic-btn');
     newElement.text(topics[i]);
-    $('#btn-wrapper').append(newElement);
+    $('#buttons-container').append(newElement);
     console.log('Created button ' + i + ':  ' + topics[i]);
 }
 
-// Goal: inside element of '#btn-wrapper, on click btn of class='topic-btn', get button's id
-$('#btn-wrapper').on('click', '.topic-btn', function () {
+// Goal: inside element of id '#buttons-container, on click btn of class='topic-btn', get button's id
+$('#buttons-container').on('click', '.topic-btn', function () {
     console.log("Requesting GIFS of topic: " + $(this).data('topic'));
 
     getGifs($(this).data('topic'));
 });
 
-$('#gif-wrapper').on('click', '.gif-preview', function () {
+$('#gifs').on('click', '.gif-preview', function () {
 
     console.log('\n----- ' + $(this).data('title') + ' -----');
-    console.log('Current Attributes -----')
+    console.log('Current Attributes')
     console.log("attr('src'): " + $(this).attr('src'));
     console.log("data('stored-src')" + $(this).data('stored-src'));
 
@@ -72,7 +72,7 @@ function getGifs(topic) {
                 newDiv.append(p);
                 newDiv.append(newImg);
 
-                $('#gif-wrapper').append(newDiv);
+                $('#gifs').append(newDiv);
 
                 console.log('Gif-' + i + ' Get!');
             }
