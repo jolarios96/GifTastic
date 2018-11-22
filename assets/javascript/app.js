@@ -1,13 +1,6 @@
-var topics = ['hamster', 'games', 'coffee', 'coding', 'music', 'penguins', 'deer', 'confusion'];
+var topics = ['dogs', 'cats', 'hamsters', 'squirrels', 'whales', 'capybara', 'mouse', 'birds'];
 
-for (var i = 0; i < topics.length; i++) {
-    var newElement = $('<button>');
-    newElement.attr('data-topic', topics[i]);
-    newElement.addClass('topic-btn');
-    newElement.text(topics[i]);
-    $('#buttons-container').append(newElement);
-    console.log('Created button ' + i + ':  ' + topics[i]);
-}
+renderButtons();
 
 // Goal: inside element of id '#buttons-container, on click btn of class='topic-btn', get button's id
 $('#buttons-container').on('click', '.topic-btn', function () {
@@ -17,21 +10,36 @@ $('#buttons-container').on('click', '.topic-btn', function () {
 });
 
 $('#gifs').on('click', '.gif-preview', function () {
-
-    console.log('\n----- ' + $(this).data('title') + ' -----');
-    console.log('Current Attributes')
-    console.log("attr('src'): " + $(this).attr('src'));
-    console.log("data('stored-src')" + $(this).data('stored-src'));
+    // swaps static image with animated gif and vise versa;
+    console.log('\n----- ' + $(this).data('title') + ' -----',
+        'Current Attributes',
+        "attr('src'): " + $(this).attr('src'),
+        "data('stored-src')" + $(this).data('stored-src')
+    );
 
     // swap attr('src') with data('stored-src') //
     var tmp = $(this).attr('src');
     $(this).attr('src', $(this).data('stored-src'));
     $(this).data('stored-src', tmp);
 
-    console.log('Updated Attributes -----')
-    console.log("attr('src'): " + $(this).attr('src'));
-    console.log("data('stored-src')" + $(this).data('stored-src'));
+    console.log('Updated Attributes -----',
+        "attr('src'): " + $(this).attr('src'),
+        "data('stored-src')" + $(this).data('stored-src')
+    );
 });
+
+$('#add-tag').on('click', function () {
+    // prevent default behavior (submit form);
+    event.preventDefault();
+    // gets text value, with excess whitespace trimmed off
+    var tag = $('#tag-input').val().trim();
+
+    // push tag into array
+    topics.push(tag);
+    console.log(tag);
+    // reconstruct buttons
+    renderButtons();
+})
 
 // ######## ##     ## ##    ##  ######  ######## ####  #######  ##    ##  ######  
 // ##       ##     ## ###   ## ##    ##    ##     ##  ##     ## ###   ## ##    ## 
@@ -62,11 +70,14 @@ function getGifs(topic) {
                 p.addClass('rating');
 
                 var newImg = $('<img>');
-                newImg.attr('src', results[i].images.fixed_height_still.url);
-                newImg.attr('data-stored-src', results[i].images.fixed_height.url)
-                newImg.attr('data-title', results[i].title);
-                newImg.attr('id', 'img-' + i);
+                newImg.attr({
+                    'src': results[i].images.fixed_height_still.url,
+                    'data-stored-src': results[i].images.fixed_height.url,
+                    'data-title': results[i].title,
+                    'id': ('img-' + i)
+                });
                 newImg.addClass('gif-preview')
+
 
                 var newDiv = $('<div>');
                 newDiv.addClass('gif-container');
@@ -80,9 +91,17 @@ function getGifs(topic) {
 
             console.log(response.data);
         })
+}
 
-    // .then(function (response) {
-    //     console.log(response.data);
+function renderButtons() {
+    $('#buttons-container').empty();
 
-    // })
+    for (var i = 0; i < topics.length; i++) {
+        var newElement = $('<button>');
+        newElement.attr('data-topic', topics[i]);
+        newElement.addClass('topic-btn');
+        newElement.text(topics[i]);
+        $('#buttons-container').append(newElement);
+        console.log('Created button ' + i + ':  ' + topics[i]);
+    }
 }

@@ -41,7 +41,7 @@ div #content-wrapper{
 
 }
 
-#submit-tag {
+#add-tag {
     background-color: darkcyan;
     border: 0;
     border-radius: 5px;
@@ -55,7 +55,7 @@ div #content-wrapper{
     float: right;
 }
 
-#submit-tag:hover {
+#add-tag:hover {
     background-color: orange;
 }
 /*  */
@@ -81,6 +81,7 @@ button:hover {
     background-color: orange;
 }
 /*  */
+
 
 /* GIF-CONTAINER STYLES */
 #gifs {    
