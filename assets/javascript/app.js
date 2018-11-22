@@ -7,7 +7,6 @@ var topics = [
     'capybara',
     'mouse',
     'birds',
-    'axelotl',
     'chipmunks',
     'dolphins',
     'fish',
