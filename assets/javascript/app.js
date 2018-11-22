@@ -108,7 +108,7 @@ function getGifs(topic) {
                 newDiv.append(newImg);
 
                 // append!
-                $('#gifs').append(newDiv);
+                $('#gifs').prepend(newDiv);
 
                 console.log('Gif-' + i + ' Get!');
             }
