@@ -17,19 +17,20 @@ $('#btn-wrapper').on('click', '.topic-btn', function () {
 });
 
 $('#gif-wrapper').on('click', '.gif-preview', function () {
-    var tmp;
 
-    console.log('stored original src in tmp');
-    tmp = $(this).attr('src');
+    console.log('\n----- ' + $(this).data('title') + ' -----');
+    console.log('Current Attributes -----')
+    console.log("attr('src'): " + $(this).attr('src'));
+    console.log("data('stored-src')" + $(this).data('stored-src'));
 
-    console.log('overwriting original src with data("src")');
-    $(this).attr('src', $(this).data('src'));
-    
-    console.log('storing tmp in data("src")')
-    $(this).data('src', tmp);
-    console.log ('data = ' + $(this).data('src'));
+    // swap attr('src') with data('stored-src') //
+    var tmp = $(this).attr('src');
+    $(this).attr('src', $(this).data('stored-src'));
+    $(this).data('stored-src', tmp);
 
-
+    console.log('Updated Attributes -----')
+    console.log("attr('src'): " + $(this).attr('src'));
+    console.log("data('stored-src')" + $(this).data('stored-src'));
 });
 
 // ######## ##     ## ##    ##  ######  ######## ####  #######  ##    ##  ######  
@@ -61,7 +62,8 @@ function getGifs(topic) {
 
                 var newImg = $('<img>');
                 newImg.attr('src', results[i].images.fixed_height_still.url);
-                newImg.attr('data-src', results[i].images.fixed_height.url)
+                newImg.attr('data-stored-src', results[i].images.fixed_height.url)
+                newImg.attr('data-title', results[i].title);
                 newImg.attr('id', 'img-' + i);
                 newImg.addClass('gif-preview')
 
