@@ -1,6 +1,28 @@
-var topics = ['dogs', 'cats', 'hamsters', 'squirrels', 'whales', 'capybara', 'mouse', 'birds'];
+var topics = [
+    'dogs',
+    'cats',
+    'hamsters',
+    'squirrels',
+    'whales',
+    'capybara',
+    'mouse',
+    'birds',
+    'axelotl',
+    'chipmunks',
+    'dolphins',
+    'fish',
+    'flamingo',
+];
 
 renderButtons();
+
+//  #####    ##       ####  ######  ##    ##         ######## ##     ## ######## ##    ## ########  ######  
+// ##    ##  ##        ##  ##    ## ##   ##          ##       ##     ## ##       ###   ##    ##    ##    ## 
+// ##        ##        ##  ##       ##  ##           ##       ##     ## ##       ####  ##    ##    ##       
+// ##        ##        ##  ##       #####    ####### ######   ##     ## ######   ## ## ##    ##     ######  
+// ##        ##        ##  ##       ##  ##           ##        ##   ##  ##       ##  ####    ##          ## 
+// ##    ##  ##        ##  ##    ## ##   ##          ##         ## ##   ##       ##   ###    ##    ##    ## 
+//  ######   ######## ####  ######  ##    ##         ########    ###    ######## ##    ##    ##     ######  
 
 // Goal: inside element of id '#buttons-container, on click btn of class='topic-btn', get button's id
 $('#buttons-container').on('click', '.topic-btn', function () {
